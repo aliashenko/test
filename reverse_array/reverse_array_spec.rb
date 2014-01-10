@@ -14,27 +14,15 @@ describe "reverse array" do
     it { expect(reverse_array(reverse)).to eq(input_array_integer) }
   end
 
-  context "transforms the string" do
+  context "of zero array" do
+    let(:input_array_integer) { [] }
 
-    let(:input_array_string) { ('a'..'z').to_a }
-    let(:reverse)     { input_array_string.reverse }
-
-
-    it { expect(reverse_array(input_array_string)).to eq(reverse) }
-
-    it { expect(reverse_array(reverse)).to eq(input_array_string) }
-
+    it { expect(reverse_array(input_array_integer)).to eq([]) }
   end
 
-  context "transforms the array of chars" do
+  context "with nil argument" do
+    let(:input_array_integer) { nil }
 
-    let(:input_array_char) { ('a'..'z').to_a + (1..10).to_a }
-    let(:reverse)     { input_array_char.reverse }
-
-
-    it { expect(reverse_array(input_array_char)).to eq(reverse) }
-
-    it { expect(reverse_array(reverse)).to eq(input_array_char) }
-
+    it { expect(reverse_array(input_array_integer)).to eq("NIL argument") }
   end
 end
